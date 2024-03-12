@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9C8A8A"
+    android:backgroundTint="#EFB8B8"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="228dp"
+        android:layout_height="80dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Hello!"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.250" />
+
+    <Button
+        android:id="@+id/StartButton"
+        android:layout_width="304dp"
+        android:layout_height="133dp"
+        android:autoSizeMaxTextSize="80sp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="#47AA40"
+        android:clickable="true"
+        android:onClick="startTesting"
+        android:text="Start!"
+        android:textAlignment="center"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.900" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="237dp"
+        android:layout_height="130dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:text="Welcome to the math knowledge tester app"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.400" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="237dp"
+        android:layout_height="130dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:text="To start press the button below"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.600" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="167dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="#5981F6"
+        android:onClick="launchSettings"
+        android:text="Settings"
+        android:textColor="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Score:"
+        app:layout_constraintEnd_toStartOf="@+id/ScoreCounter"
+        app:layout_constraintHorizontal_bias="0.960"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ScoreCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.840"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

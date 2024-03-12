@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/choice_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="284dp"
+        android:layout_height="150dp"
+        android:autoSizeMaxTextSize="40sp"
+        android:autoSizeTextType="uniform"
+        android:text="Please choose what you want to test:"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/AdditionButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:onClick="AdditionTesting"
+        android:text="Addition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.300" />
+
+    <Button
+        android:id="@+id/SubtractionButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Subtraction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
+
+    <Button
+        android:id="@+id/MultiplicationButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Multiplication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.530" />
+
+    <Button
+        android:id="@+id/DivisionButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Division"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645" />
+
+    <Button
+        android:id="@+id/EverythingButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Everything"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.760" />
+
+    <Button
+        android:id="@+id/RetryButton"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:text="Retry incorrect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Score:"
+        app:layout_constraintEnd_toStartOf="@+id/ScoreCounter"
+        app:layout_constraintHorizontal_bias="0.960"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ScoreCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.840"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
