@@ -153,7 +153,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
             doingEverything = false;
             doingIncorrect = true;
             Question q = Main.incorrectQuestionsList.get(0);
-            currentQuestion = new Question(q.a,q.b,q.c,q.operation, q.missing,q.Simple);
+            currentQuestion = new Question(q.a,q.b,q.c,q.operation, q.missing,q.Simple,q.questionLevel);
             String equation = getEquation(q);
             TextView tv = (TextView) findViewById(R.id.Equation);
             tv.setText(equation);
@@ -203,7 +203,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         }
         int missing = rand.nextInt(3);
         if(operation == 3 && !Main.isDivisionSimple()){missing = 2;}
-        currentQuestion = new Question(a,b,c,operation, missing,true);
+        currentQuestion = new Question(a,b,c,operation, missing,true, Main.getLevel());
         String equation = getEquation(currentQuestion);
         TextView tv = (TextView) findViewById(R.id.Equation);
         tv.setText(equation);
@@ -287,7 +287,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 ){
                     System.out.println("Correct!");
                     Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
-                    Main.addToScore();
+                    Main.addToScore(currentQuestion.questionLevel);
                 }else{
                     System.out.println("Incorrect, but you can try again later");
                     Main.incorrectQuestionsList.add(currentQuestion);
@@ -300,7 +300,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 ){
                     System.out.println("Correct!");
                     Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
-                    Main.addToScore();
+                    Main.addToScore(currentQuestion.questionLevel);
                 }else{
                     System.out.println("Incorrect, but you can try again later");
                     Main.incorrectQuestionsList.add(currentQuestion);
@@ -313,7 +313,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 ){
                     System.out.println("Correct!");
                     Toast.makeText(this, "Correct!", Toast.LENGTH_LONG).show();
-                    Main.addToScore();
+                    Main.addToScore(currentQuestion.questionLevel);
                 }else{
                     System.out.println("Incorrect, but you can try again later");
                     Main.incorrectQuestionsList.add(currentQuestion);

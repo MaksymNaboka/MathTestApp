@@ -24,9 +24,9 @@ public class Main {
     private static int score=0;
 
 
-    public static void addToScore(){
+    public static void addToScore(int qLevel){
         int points =0;
-        switch(level){
+        switch(qLevel){
             case 1:
                 points = 1;
                 break;
