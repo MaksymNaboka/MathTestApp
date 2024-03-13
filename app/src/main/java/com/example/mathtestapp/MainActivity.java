@@ -39,7 +39,7 @@ String lastCalled="";
 //        setContentView(R.layout.choice_screen);
     }
 
-    public void updateScore(){
+    private void updateScore(){
         TextView scoreCounter= (TextView) findViewById(R.id.ScoreCounter);
         scoreCounter.setText(String.format("%4d",Main.getScore()));
     }

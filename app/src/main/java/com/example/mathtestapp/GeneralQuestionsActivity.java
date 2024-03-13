@@ -33,11 +33,11 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         setDifficulty(level, operation);
         Button b = (Button) findViewById(R.id.SubmitButton);
         b.setEnabled(true);
-        TextView tv = (TextView) findViewById(R.id.IQListSize);
-        if(operation==10){tv.setText("Incorrect Questions: "+ Main.incorrectQuestionsList.size());}
-        else{
-            tv.setText("");
-        }
+//        TextView tv = (TextView) findViewById(R.id.IQListSize);
+//        if(operation==10){tv.setText("Incorrect Questions: "+ Main.incorrectQuestionsList.size());}
+//        else{
+//            tv.setText("");
+//        }
         switch(operation){
             case 0:
                 additionTest();
@@ -59,7 +59,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 break;
         }
     }
-    public void setDifficulty(int level, int operation){
+    private void setDifficulty(int level, int operation){
         switch(operation){
             case 0://addition
             case 1://subtraction
@@ -104,46 +104,53 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         }
     }
 
-    public int additionTest(){
+    private void additionTest(){
         System.out.println("Addition test starts now");
         doingEverything = false;
         doingIncorrect = false;
+        TextView tv = (TextView) findViewById(R.id.IQListSize);
+        tv.setText("");
         test(0);
-        return 0;
     }
-    public int subtractionTest(){
+    private void subtractionTest(){
         System.out.println("Subtraction test starts now");
         doingEverything = false;
         doingIncorrect = false;
+        TextView tvIQS = (TextView) findViewById(R.id.IQListSize);
+        tvIQS.setText("");
         test(1);
-        return 0;
     }
-    public int multiplicationTest(){
+    private void multiplicationTest(){
         System.out.println("Multiplication test starts now");
         doingEverything = false;
         doingIncorrect = false;
+        TextView tvIQS = (TextView) findViewById(R.id.IQListSize);
+        tvIQS.setText("");
         test(2);
-        return 0;
     }
-    public int divisionTest(){
+    private void divisionTest(){
         System.out.println("Division test starts now");
         doingEverything = false;
         doingIncorrect = false;
+        TextView tvIQS = (TextView) findViewById(R.id.IQListSize);
+        tvIQS.setText("");
         test(3);
-        return 0;
     }
-    public int everythingTest(){
+    private void everythingTest(){
         System.out.println("Everything test starts now");
         doingEverything=true;
         doingIncorrect = false;
+        TextView tvIQS = (TextView) findViewById(R.id.IQListSize);
+        tvIQS.setText("");
         int operation = rand.nextInt(4);
         setDifficulty(Main.getLevel(), operation);//in everything test need to change min/max depending on operation. In others already set in onCreate()
         test(operation);
-        return 0;
     }
 
-    public int retryIncorrect(){
+    private void retryIncorrect(){
         System.out.println("Incorrect starts now");
+        TextView tvIQS = (TextView) findViewById(R.id.IQListSize);
+        tvIQS.setText("Incorrect Questions: "+ Main.incorrectQuestionsList.size());
         if(Main.incorrectQuestionsList.isEmpty()){
             TextView tv = (TextView) findViewById(R.id.Equation);
             tv.setText("You do not have any incorrect questions");
@@ -158,10 +165,9 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
             TextView tv = (TextView) findViewById(R.id.Equation);
             tv.setText(equation);
         }
-        return 0;
     }
 
-    private int test(int operation){
+    private void test(int operation){
         float a;
         float b;
         if(operation == 3 && Main.isDivisionSimple()){//if division and simple
@@ -207,7 +213,6 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         String equation = getEquation(currentQuestion);
         TextView tv = (TextView) findViewById(R.id.Equation);
         tv.setText(equation);
-        return 0;
     }
 
     private String getEquation(Question q){
@@ -351,12 +356,12 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         }
     }
 
-    public void updateScore(){
+    private void updateScore(){
         TextView scoreCounter= (TextView) findViewById(R.id.ScoreCounter);
         scoreCounter.setText(String.format("%4d",Main.getScore()));
     }
 
-    ArrayList<Integer> findAllDivisors(int number){
+    private ArrayList<Integer> findAllDivisors(int number){
         ArrayList<Integer> divisors = new ArrayList<>();
         for(int i=1; i<=number; i++){
             if(number%i==0){

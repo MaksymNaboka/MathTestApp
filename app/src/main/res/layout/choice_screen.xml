@@ -115,7 +115,7 @@
         android:autoSizeTextType="uniform"
         android:onClick="RetryIncorrect"
         android:text="Retry incorrect"
-        android:backgroundTint="#EC7357"
+        android:backgroundTint="@color/button_style"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
