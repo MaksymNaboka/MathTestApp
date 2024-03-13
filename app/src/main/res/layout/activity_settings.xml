@@ -125,4 +125,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.800" />
+
+    <Button
+        android:id="@+id/resetIncorrectQuestions"
+        android:layout_width="289dp"
+        android:layout_height="54dp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="#c90404"
+        android:onClick="clearIQList"
+        android:tag="hard"
+        android:text="Clear incorrect questions list"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.950" />
 </androidx.constraintlayout.widget.ConstraintLayout>

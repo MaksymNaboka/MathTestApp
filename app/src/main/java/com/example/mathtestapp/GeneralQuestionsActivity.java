@@ -75,13 +75,13 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                         break;
                 }
                 break;
-            case 2://multiplication
+            case 2://multiplication/ doesn't have 0 and 1 because they are too trivial
                 switch (level){
                     case 1:
-                        minNum = 0; maxNum = 9;
+                        minNum = 2; maxNum = 9;
                         break;
                     case 2:
-                        minNum = 0; maxNum = 20;
+                        minNum = 2; maxNum = 20;
                         break;
                     case 3:
                         minNum = 10; maxNum = 30;

@@ -102,4 +102,8 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    public static void clearIQList(){
+        incorrectQuestionsList.clear();
+    }
 }

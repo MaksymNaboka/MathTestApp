@@ -1,7 +1,9 @@
 package com.example.mathtestapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -63,6 +65,20 @@ public class SettingsActivity extends AppCompatActivity {
             findViewById(R.id.difficulty2).setEnabled(true);
             findViewById(R.id.difficulty3).setEnabled(false);
         }
+    }
+
+    public void clearIQList(View view){
+        AlertDialog.Builder Alertbuilder = new AlertDialog.Builder(SettingsActivity.this);
+        Alertbuilder.setTitle("Think twice!");
+        Alertbuilder.setMessage("Are you sure you want to clear the incorrect question list? You will not be able to restore them");
+        Alertbuilder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+            Main.clearIQList();
+        });
+        Alertbuilder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+        });
+        Alertbuilder.setCancelable(false);
+        AlertDialog alert = Alertbuilder.create();
+        alert.show();
     }
 
 //    @Override
