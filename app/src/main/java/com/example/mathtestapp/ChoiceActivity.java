@@ -28,7 +28,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 0);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
@@ -36,7 +36,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 1);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
@@ -44,7 +44,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 2);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
@@ -52,7 +52,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 3);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
@@ -60,7 +60,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 4);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
@@ -68,7 +68,7 @@ public class ChoiceActivity extends AppCompatActivity {
 //            setContentView(R.layout.addition_testing);
         Intent intent = new Intent(this, GeneralQuestionsActivity.class);
         intent.putExtra("operation", 10);
-        intent.putExtra("level", Main.level);
+        intent.putExtra("level", Main.getLevel());
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }

@@ -36,11 +36,11 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void setDivisionMode(View view){
         if(view.getId()==R.id.divisionSimple){
-            Main.divisionSimple=true;
+            Main.setDivisionSimple(true);
             findViewById(R.id.divisionSimple).setEnabled(false);
             findViewById(R.id.divisionHard).setEnabled(true);
         }else if(view.getId()==R.id.divisionHard){
-            Main.divisionSimple=false;
+            Main.setDivisionSimple(false);
             findViewById(R.id.divisionSimple).setEnabled(true);
             findViewById(R.id.divisionHard).setEnabled(false);
         }
@@ -48,17 +48,17 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void setDifficulty(View view){
         String tag = view.getTag().toString();
-        if(tag.contains("level1")){Main.level=1;
+        if(tag.contains("level1")){Main.setLevel(1);
             findViewById(R.id.difficulty1).setEnabled(false);
             findViewById(R.id.difficulty2).setEnabled(true);
             findViewById(R.id.difficulty3).setEnabled(true);
         }else
-        if(tag.contains("level2")){Main.level=2;
+        if(tag.contains("level2")){Main.setLevel(2);
             findViewById(R.id.difficulty1).setEnabled(true);
             findViewById(R.id.difficulty2).setEnabled(false);
             findViewById(R.id.difficulty3).setEnabled(true);
         }else
-        if(tag.contains("level3")){Main.level=3;
+        if(tag.contains("level3")){Main.setLevel(3);
             findViewById(R.id.difficulty1).setEnabled(true);
             findViewById(R.id.difficulty2).setEnabled(true);
             findViewById(R.id.difficulty3).setEnabled(false);

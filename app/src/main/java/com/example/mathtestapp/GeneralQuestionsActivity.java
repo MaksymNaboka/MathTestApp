@@ -33,6 +33,11 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         int operation = i.getIntExtra("operation", 0);
         Button b = (Button) findViewById(R.id.SubmitButton);
         b.setEnabled(true);
+        TextView tv = (TextView) findViewById(R.id.IQListSize);
+        if(operation==10){tv.setText("Incorrect Questions: "+ Main.incorrectQuestionsList.size());}
+        else{
+            tv.setText("");
+        }
         switch(operation){
             case 0:
                 additionTest();
@@ -285,6 +290,7 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         updateScore();
         if(doingEverything){
             everythingTest();
+            return;
         }
         if(doingIncorrect){
             Main.incorrectQuestionsList.remove(0);
