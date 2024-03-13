@@ -24,7 +24,41 @@ public class ChoiceActivity extends AppCompatActivity {
 
     public void AdditionTesting(View view){
 //            setContentView(R.layout.addition_testing);
-        Intent intent = new Intent(this, additionActivity.class);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 0);
+        intent.putExtra("level", Main.level);
+        startActivity(intent);
+//            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
+    }
+    public void SubtractionTesting(View view){
+//            setContentView(R.layout.addition_testing);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 1);
+        intent.putExtra("level", Main.level);
+        startActivity(intent);
+//            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
+    }
+    public void MultiplicationTesting(View view){
+//            setContentView(R.layout.addition_testing);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 2);
+        intent.putExtra("level", Main.level);
+        startActivity(intent);
+//            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
+    }
+    public void DivisionTesting(View view){
+//            setContentView(R.layout.addition_testing);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 3);
+        intent.putExtra("level", Main.level);
+        startActivity(intent);
+//            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
+    }
+    public void EverythingTesting(View view){
+//            setContentView(R.layout.addition_testing);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 4);
+        intent.putExtra("level", Main.level);
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }

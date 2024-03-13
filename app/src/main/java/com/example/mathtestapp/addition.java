@@ -24,7 +24,7 @@ public class addition {
     ConstraintLayout additionLayout;
     MainActivity ma;
 
-    public int additionTest(int lvl, ArrayList<IncorrectQuestion> iqList) {
+    public int additionTest(int lvl, ArrayList<Question> iqList) {
         switch (lvl) {
             case 1:
                 minNum = 10;
@@ -47,7 +47,7 @@ public class addition {
         return result;
     }
 
-    private int test(ArrayList<IncorrectQuestion> iqList) {
+    private int test(ArrayList<Question> iqList) {
         System.out.println("Question number " + questionNum + ":");
         Random rand = new Random();
         int a, b, c;
@@ -58,7 +58,7 @@ public class addition {
         return additionQuestion(a, b, c, missing, iqList);
     }
 
-    public int additionQuestion(int a, int b, int c, int missing, ArrayList<IncorrectQuestion> iqList) {
+    public int additionQuestion(int a, int b, int c, int missing, ArrayList<Question> iqList) {
 //        int answer=-1;
         EditText answerET = null;
         switch (missing) {
@@ -79,7 +79,7 @@ public class addition {
                     return 1;
                 } else {
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a, b, c, 1, 0, true));
+                    iqList.add(new Question(a, b, c, 1, 0, true));
                 }
                 break;
             case 1:
@@ -99,7 +99,7 @@ public class addition {
                     return 1;
                 } else {
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a, b, c, 1, 1, true));
+                    iqList.add(new Question(a, b, c, 1, 1, true));
                 }
                 break;
             case 2:
@@ -119,7 +119,7 @@ public class addition {
                     return 1;
                 } else {
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a, b, c, 1, 2, true));
+                    iqList.add(new Question(a, b, c, 1, 2, true));
                 }
                 break;
         }

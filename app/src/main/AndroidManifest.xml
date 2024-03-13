@@ -13,9 +13,12 @@
         android:theme="@style/Theme.MathTestApp"
         tools:targetApi="31">
         <activity
+            android:name=".GeneralQuestionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChoiceActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".additionActivity"
             android:exported="false"

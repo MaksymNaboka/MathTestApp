@@ -10,7 +10,7 @@ public class division {
     private int questionNum=1;
     private boolean simple;
     Scanner input = new Scanner(System.in);
-    public int divisionTest(int lvl, ArrayList<IncorrectQuestion> iqList){
+    public int divisionTest(int lvl, ArrayList<Question> iqList){
         switch (lvl){
             case 1:
                 minNum = 50; maxNum = 100;
@@ -38,7 +38,7 @@ public class division {
         return result;
     }
 
-    private int test(ArrayList<IncorrectQuestion> iqList){
+    private int test(ArrayList<Question> iqList){
         System.out.println("Question number "+questionNum+":");
         Random rand = new Random();
         if(!simple) {
@@ -78,7 +78,7 @@ public class division {
         return divisors;
     }
 
-    public int divisionQuestionSimple(int a, int b, int c, int missing, ArrayList<IncorrectQuestion> iqList){
+    public int divisionQuestionSimple(int a, int b, int c, int missing, ArrayList<Question> iqList){
         int answer;
         switch (missing) {
             case 0:
@@ -91,7 +91,7 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,0, true));
+                    iqList.add(new Question(a,b,c,4,0, true));
                 }
                 break;
             case 1:
@@ -104,7 +104,7 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,1, true));
+                    iqList.add(new Question(a,b,c,4,1, true));
                 }
                 break;
             case 2:
@@ -117,13 +117,13 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,2, true));
+                    iqList.add(new Question(a,b,c,4,2, true));
                 }
                 break;
         }
         return 0;
     }
-    public int divisionQuestionNotSimple(float a, float b, float c, int missing, ArrayList<IncorrectQuestion> iqList){
+    public int divisionQuestionNotSimple(float a, float b, float c, int missing, ArrayList<Question> iqList){
         float answer;
         switch (missing) {
             case 0:
@@ -136,7 +136,7 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,0, false));
+                    iqList.add(new Question(a,b,c,4,0, false));
                 }
                 break;
             case 1:
@@ -149,7 +149,7 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,1, false));
+                    iqList.add(new Question(a,b,c,4,1, false));
                 }
                 break;
             case 2:
@@ -162,7 +162,7 @@ public class division {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,4,2, false));
+                    iqList.add(new Question(a,b,c,4,2, false));
                 }
                 break;
         }

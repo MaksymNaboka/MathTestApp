@@ -12,8 +12,24 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        findViewById(R.id.divisionHard).setEnabled(false);
-        findViewById(R.id.difficulty1).setEnabled(false);
+        int level = Main.getLevel();
+        boolean division = Main.isDivisionSimple();
+        if(division) {
+            findViewById(R.id.divisionHard).setEnabled(false);
+        }else {
+            findViewById(R.id.divisionSimple).setEnabled(false);
+        }
+        switch (level){
+            case 1:
+                findViewById(R.id.difficulty1).setEnabled(false);
+                break;
+            case 2:
+                findViewById(R.id.difficulty2).setEnabled(false);
+                break;
+            case 3:
+                findViewById(R.id.difficulty3).setEnabled(false);
+                break;
+        }
     }
 
     public void setDivisionMode(View view){

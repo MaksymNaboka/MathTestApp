@@ -8,7 +8,7 @@ public class subtraction {
     private int result=0, minNum, maxNum;
     private int questionNum=1;
     Scanner input = new Scanner(System.in);
-    public int subtractionTest(int lvl, ArrayList<IncorrectQuestion> iqList){
+    public int subtractionTest(int lvl, ArrayList<Question> iqList){
         switch (lvl){
             case 1:
                 minNum = 10; maxNum = 50;
@@ -28,7 +28,7 @@ public class subtraction {
         return result;
     }
 
-    private int test(ArrayList<IncorrectQuestion> iqList){
+    private int test(ArrayList<Question> iqList){
         System.out.println("Question number "+questionNum+":");
         Random rand = new Random();
         int a,b,c;
@@ -44,7 +44,7 @@ public class subtraction {
         return subtractionQuestion(a,b,c,missing,iqList);
     }
 
-    public int subtractionQuestion(int a, int b, int c, int missing, ArrayList<IncorrectQuestion> iqList){
+    public int subtractionQuestion(int a, int b, int c, int missing, ArrayList<Question> iqList){
         int answer;
         switch (missing){
             case 0:
@@ -57,7 +57,7 @@ public class subtraction {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,2,0, true));
+                    iqList.add(new Question(a,b,c,2,0, true));
                 }
                 break;
             case 1:
@@ -70,7 +70,7 @@ public class subtraction {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,2,1, true));
+                    iqList.add(new Question(a,b,c,2,1, true));
                 }
                 break;
             case 2:
@@ -83,7 +83,7 @@ public class subtraction {
                     return 1;
                 }else{
                     System.out.println("Incorrect, but you can try again later");
-                    iqList.add(new IncorrectQuestion(a,b,c,2,2, true));
+                    iqList.add(new Question(a,b,c,2,2, true));
                 }
                 break;
         }

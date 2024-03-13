@@ -15,7 +15,7 @@ public class Main {
     static int choice, level=1;
     static boolean repeat=true;
     static boolean divisionSimple=false;
-    static ArrayList<IncorrectQuestion> incorrectQuestionsList = new ArrayList<IncorrectQuestion>();
+    static ArrayList<Question> incorrectQuestionsList = new ArrayList<Question>();
     static Scanner s = new Scanner(System.in);
     static private int score=0;
 
@@ -106,7 +106,7 @@ public class Main {
         }
     }
 
-    private static int everythingTest(int lvl, ArrayList<IncorrectQuestion> iqList){
+    private static int everythingTest(int lvl, ArrayList<Question> iqList){
         System.out.println("Warning: you will not be able to leave the test until you do all 40 questions");
         System.out.println("Do you want to continue?");
         if(s.hasNext("no")){s.nextLine(); return 0;}else{
@@ -120,7 +120,7 @@ public class Main {
         result+= mp.multiplicationTest(lvl, iqList);
         return result;
     }
-    private static void retryIncorrect(ArrayList<IncorrectQuestion> iqList){
+    private static void retryIncorrect(ArrayList<Question> iqList){
         Scanner s = new Scanner(System.in);
         System.out.println("Now you can retry your incorrectly answered questions");
         System.out.println("Every 5 questions you will be asked to continue, if you wish to leave, say no");
@@ -134,18 +134,18 @@ public class Main {
                 }
                 s.nextLine();
             }
-            IncorrectQuestion question = iqList.get(0);
+            Question question = iqList.get(0);
             switch (question.operation){
-                case 1:
+                case 0:
                      ad.additionQuestion((int)question.a, (int)question.b, (int)question.c, question.missing, iqList);
                     break;
-                case 2:
+                case 1:
                      st.subtractionQuestion((int)question.a, (int)question.b, (int)question.c, question.missing, iqList);
                     break;
-                case 3:
+                case 2:
                      mp.multiplicationQuestion((int)question.a, (int)question.b, (int)question.c, question.missing, iqList);
                     break;
-                case 4:
+                case 3:
                     if(question.Simple){
                        dv.divisionQuestionSimple((int)question.a, (int)question.b, (int)question.c, question.missing, iqList);
                     }else{
@@ -160,19 +160,34 @@ public class Main {
     }
 
 
-    public static void addToScore(int points){
+    public static void addToScore(){
+        int points =0;
+        switch(level){
+            case 1:
+                points = 1;
+                break;
+            case 2:
+                points = 2;
+                break;
+            case 3:
+                points = 3;
+                break;
+        }
         if(points>0) {
             score += points;
         }
     }
 
-    public static void subtractFromScore(int points){
-        if(points>0 && score>0){
-            score-=points;
+    public static void subtractFromScore(){
+        if(score>0){
+            score-=1;
         }
     }
 
     public static int getScore() {
         return score;
     }
+    public static boolean isDivisionSimple(){return divisionSimple; }
+
+    public static int getLevel(){return level;}
 }
