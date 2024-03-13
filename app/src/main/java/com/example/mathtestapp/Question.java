@@ -1,6 +1,6 @@
 package com.example.mathtestapp;
-
-public class Question {
+import java.io.Serializable;
+public class Question implements Serializable {
     float a,b,c;
     int operation,missing;
     boolean Simple;

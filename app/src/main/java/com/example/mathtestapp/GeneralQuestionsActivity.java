@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -323,5 +324,12 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
             divisors.remove(divisors.size()-1);
         }
         return divisors;
+    }
+
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        Main.saveState(path);
+        super.onDestroy();
     }
 }

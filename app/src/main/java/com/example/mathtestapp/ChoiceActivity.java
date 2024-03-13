@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.File;
+
 public class ChoiceActivity extends AppCompatActivity {
 
     @Override
@@ -85,5 +87,11 @@ public class ChoiceActivity extends AppCompatActivity {
         }else{
             findViewById(R.id.RetryButton).setEnabled(true);
         }
+    }
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        Main.saveState(path);
+        super.onDestroy();
     }
 }

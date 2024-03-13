@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.io.File;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -61,5 +63,12 @@ public class SettingsActivity extends AppCompatActivity {
             findViewById(R.id.difficulty2).setEnabled(true);
             findViewById(R.id.difficulty3).setEnabled(false);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        Main.saveState(path);
+        super.onDestroy();
     }
 }

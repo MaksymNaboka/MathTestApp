@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,8 @@ String lastCalled="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        File path = getApplicationContext().getFilesDir();
+        Main.loadState(path);
         updateScore();
     }
 
@@ -45,5 +48,12 @@ String lastCalled="";
     protected void onResume() {
         super.onResume();
         updateScore();
+    }
+
+    @Override
+    protected void onDestroy() {
+        File path = getApplicationContext().getFilesDir();
+        Main.saveState(path);
+        super.onDestroy();
     }
 }
