@@ -15,9 +15,9 @@ public class SettingsActivity extends AppCompatActivity {
         int level = Main.getLevel();
         boolean division = Main.isDivisionSimple();
         if(division) {
-            findViewById(R.id.divisionHard).setEnabled(false);
-        }else {
             findViewById(R.id.divisionSimple).setEnabled(false);
+        }else {
+            findViewById(R.id.divisionHard).setEnabled(false);
         }
         switch (level){
             case 1:

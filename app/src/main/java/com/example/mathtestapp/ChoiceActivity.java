@@ -62,6 +62,14 @@ public class ChoiceActivity extends AppCompatActivity {
         startActivity(intent);
 //            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
     }
+    public void RetryIncorrect(View view){
+//            setContentView(R.layout.addition_testing);
+        Intent intent = new Intent(this, GeneralQuestionsActivity.class);
+        intent.putExtra("operation", 10);
+        intent.putExtra("level", Main.level);
+        startActivity(intent);
+//            Main.ad.additionTest(Main.level, Main.incorrectQuestionsList);
+    }
 
     public void updateScore(){
         TextView scoreCounter= (TextView) findViewById(R.id.ScoreCounter);
@@ -72,7 +80,6 @@ public class ChoiceActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateScore();
-        Log.d("aboba", "IQLIST SIZE " + Main.incorrectQuestionsList.size());
         if(Main.incorrectQuestionsList.isEmpty()) {
             findViewById(R.id.RetryButton).setEnabled(false);
         }else{

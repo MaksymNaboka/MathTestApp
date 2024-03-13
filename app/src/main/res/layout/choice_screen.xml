@@ -100,6 +100,7 @@
         android:layout_height="54dp"
         android:autoSizeMaxTextSize="50sp"
         android:autoSizeTextType="uniform"
+        android:onClick="RetryIncorrect"
         android:text="Retry incorrect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

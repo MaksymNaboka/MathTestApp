@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,8 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
     private Question currentQuestion;
     Random rand = new Random();
     private boolean doingEverything = false;
+    private boolean doingIncorrect = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,8 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         int level = i.getIntExtra("level", 0);
         setDifficulty(level);
         int operation = i.getIntExtra("operation", 0);
+        Button b = (Button) findViewById(R.id.SubmitButton);
+        b.setEnabled(true);
         switch(operation){
             case 0:
                 additionTest();
@@ -41,6 +47,9 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 break;
             case 4:
                 everythingTest();
+                break;
+            case 10:
+                retryIncorrect();
                 break;
         }
     }
@@ -61,36 +70,59 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
     public int additionTest(){
         System.out.println("Addition test starts now");
         doingEverything = false;
+        doingIncorrect = false;
         test(0);
         return 0;
     }
     public int subtractionTest(){
         System.out.println("Subtraction test starts now");
         doingEverything = false;
+        doingIncorrect = false;
         test(1);
         return 0;
     }
     public int multiplicationTest(){
         System.out.println("Multiplication test starts now");
         doingEverything = false;
+        doingIncorrect = false;
         test(2);
         return 0;
     }
     public int divisionTest(){
         System.out.println("Division test starts now");
         doingEverything = false;
+        doingIncorrect = false;
         test(3);
         return 0;
     }
     public int everythingTest(){
         System.out.println("Everything test starts now");
         doingEverything=true;
+        doingIncorrect = false;
         test(rand.nextInt(4));
         return 0;
     }
 
-    private int test(int operation){
+    public int retryIncorrect(){
+        System.out.println("Incorrect starts now");
+        if(Main.incorrectQuestionsList.isEmpty()){
+            TextView tv = (TextView) findViewById(R.id.Equation);
+            tv.setText("You do not have any incorrect questions");
+            Button b = (Button) findViewById(R.id.SubmitButton);
+            b.setEnabled(false);
+        }else {
+            doingEverything = false;
+            doingIncorrect = true;
+            Question q = Main.incorrectQuestionsList.get(0);
+            currentQuestion = new Question(q.a,q.b,q.c,q.operation, q.missing,q.Simple);
+            String equation = getEquation(q);
+            TextView tv = (TextView) findViewById(R.id.Equation);
+            tv.setText(equation);
+        }
+        return 0;
+    }
 
+    private int test(int operation){
         float a;
         float b;
         if(operation == 3 && Main.isDivisionSimple()){//if division and simple
@@ -252,6 +284,11 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         updateScore();
         if(doingEverything){
             everythingTest();
+        }
+        if(doingIncorrect){
+            Main.incorrectQuestionsList.remove(0);
+            retryIncorrect();
+            return;
         }
         switch (currentQuestion.operation){
             case 0:

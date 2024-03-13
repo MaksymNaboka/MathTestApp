@@ -14,7 +14,7 @@ public class Main {
     static division dv = new division();
     static int choice, level=1;
     static boolean repeat=true;
-    static boolean divisionSimple=false;
+    static boolean divisionSimple=true;
     static ArrayList<Question> incorrectQuestionsList = new ArrayList<Question>();
     static Scanner s = new Scanner(System.in);
     static private int score=0;
