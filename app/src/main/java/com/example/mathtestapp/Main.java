@@ -68,6 +68,8 @@ public class Main {
             DataOutputStream dataOut = new DataOutputStream(outputStream);
             ObjectOutputStream objectOut = new ObjectOutputStream(outputStream);
             dataOut.writeInt(score);
+            dataOut.writeInt(level);
+            dataOut.writeBoolean(divisionSimple);
             dataOut.writeInt(incorrectQuestionsList.size());
             for(int i=0; i<incorrectQuestionsList.size(); i++){
                 objectOut.writeObject(incorrectQuestionsList.get(i));
@@ -87,6 +89,8 @@ public class Main {
             DataInputStream dataIn = new DataInputStream(inputStream);
             ObjectInputStream objectIn = new ObjectInputStream(inputStream);
             score = dataIn.readInt();
+            level = dataIn.readInt();
+            divisionSimple = dataIn.readBoolean();
             int iqListSize = dataIn.readInt();
             for(int i=0; i<iqListSize; i++){
                 incorrectQuestionsList.add((Question)objectIn.readObject());

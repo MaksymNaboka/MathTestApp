@@ -88,10 +88,10 @@ public class ChoiceActivity extends AppCompatActivity {
             findViewById(R.id.RetryButton).setEnabled(true);
         }
     }
-    @Override
-    protected void onDestroy() {
-        File path = getApplicationContext().getFilesDir();
-        Main.saveState(path);
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        File path = getApplicationContext().getFilesDir();
+//        Main.saveState(path);
+//        super.onDestroy();
+//    }
 }

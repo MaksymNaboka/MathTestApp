@@ -29,8 +29,8 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         updateScore();
         Intent i = getIntent();
         int level = i.getIntExtra("level", 0);
-        setDifficulty(level);
         int operation = i.getIntExtra("operation", 0);
+        setDifficulty(level, operation);
         Button b = (Button) findViewById(R.id.SubmitButton);
         b.setEnabled(true);
         TextView tv = (TextView) findViewById(R.id.IQListSize);
@@ -59,16 +59,47 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 break;
         }
     }
-    public void setDifficulty(int level){
-        switch (level){
-            case 1:
-                minNum = 10; maxNum = 50;
+    public void setDifficulty(int level, int operation){
+        switch(operation){
+            case 0://addition
+            case 1://subtraction
+                switch (level){
+                    case 1:
+                        minNum = 10; maxNum = 50;
+                        break;
+                    case 2:
+                        minNum = 100; maxNum = 1000;
+                        break;
+                    case 3:
+                        minNum = 1000; maxNum = 3000;
+                        break;
+                }
                 break;
-            case 2:
-                minNum = 100; maxNum = 1000;
+            case 2://multiplication
+                switch (level){
+                    case 1:
+                        minNum = 0; maxNum = 9;
+                        break;
+                    case 2:
+                        minNum = 0; maxNum = 20;
+                        break;
+                    case 3:
+                        minNum = 10; maxNum = 30;
+                        break;
+                }
                 break;
-            case 3:
-                minNum = 1000; maxNum = 3000;
+            case 3://division
+                switch (level){
+                    case 1:
+                        minNum = 10; maxNum = 50;
+                        break;
+                    case 2:
+                        minNum = 100; maxNum = 300;
+                        break;
+                    case 3:
+                        minNum = 300; maxNum = 1000;
+                        break;
+                }
                 break;
         }
     }
@@ -105,7 +136,9 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         System.out.println("Everything test starts now");
         doingEverything=true;
         doingIncorrect = false;
-        test(rand.nextInt(4));
+        int operation = rand.nextInt(4);
+        setDifficulty(Main.getLevel(), operation);//in everything test need to change min/max depending on operation. In others already set in onCreate()
+        test(operation);
         return 0;
     }
 
@@ -288,12 +321,17 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
                 }
         }
         updateScore();
+
+        //save state when anything changes(either score or IQList)
+        File path = getApplicationContext().getFilesDir();
+        Main.saveState(path);
         if(doingEverything){
             everythingTest();
             return;
         }
         if(doingIncorrect){
             Main.incorrectQuestionsList.remove(0);
+            Main.saveState(path);
             retryIncorrect();
             return;
         }
@@ -332,10 +370,10 @@ public class GeneralQuestionsActivity extends AppCompatActivity {
         return divisors;
     }
 
-    @Override
-    protected void onDestroy() {
-        File path = getApplicationContext().getFilesDir();
-        Main.saveState(path);
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        File path = getApplicationContext().getFilesDir();
+//        Main.saveState(path);
+//        super.onDestroy();
+//    }
 }

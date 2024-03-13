@@ -50,10 +50,10 @@ String lastCalled="";
         updateScore();
     }
 
-    @Override
-    protected void onDestroy() {
-        File path = getApplicationContext().getFilesDir();
-        Main.saveState(path);
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        File path = getApplicationContext().getFilesDir();
+//        Main.saveState(path);
+//        super.onDestroy();
+//    }
 }
