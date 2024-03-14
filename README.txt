@@ -14,6 +14,7 @@ for addition, subtraction, multiplication and division,
 + mode "Everything" where every question can be with any operator
 
 If you made a mistake, you can try that question again in "Retry incorrect questions" mode
+Note that you will still get deductions to score if you answer the questions wrong again
 
 In settings you can find 3 levels of difficulty, as well as mode for division questions
 
