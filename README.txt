@@ -10,14 +10,14 @@ You can choose any of the available modes and practice questions there as long a
 There are no restrictions
 
 There are 4 main modes:
-for addition, subtraction, multiplication and division
-plus mode "Everything" where every question can be with any operator
+for addition, subtraction, multiplication and division,
+and mode "Everything" where every question can be with any operator
 
 If you made a mistake, you can try that question again in "Retry incorrect questions" mode
 
 In settings you can find 3 levels of difficulty, as well as mode for division questions
 
-Difficulties:
+Difficulties
 +1 level - you gain 1 point if answered correctly and -1 if answered wrong
 
 +2 level - you gain 2 points if answered correctly and -1 if answered wrong
