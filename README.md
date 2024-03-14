@@ -19,7 +19,9 @@ In settings you can find 3 levels of difficulty, as well as mode for division qu
 
 Difficulties:
 +1 level - you gain 1 point if answered correctly and -1 if answered wrong
+
 +2 level - you gain 2 points if answered correctly and -1 if answered wrong
+
 +3 level - you gain 3 points if answered correctly and -1 if answered wrong
 
 Division mode:
